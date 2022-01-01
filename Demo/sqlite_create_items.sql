@@ -1,0 +1,9 @@
+CREATE TABLE items
+(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  description TEXT,
+  price INTEGER DEFAULT 1,
+  stack_max INTEGER DEFAULT 32
+);
+
