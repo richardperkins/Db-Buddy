@@ -64,8 +64,6 @@ public class ItemLoader : DbBuddy
         return Execute(sql, args);
     }
 
-
-
     /* Add row to "items" table
      *
      * Params:
@@ -88,9 +86,6 @@ public class ItemLoader : DbBuddy
         // Return number of affected rows
         return ExecuteWrite(sql, args);
     }
-
-
-
 
     /* Updates item information by id
      *
@@ -117,9 +112,6 @@ public class ItemLoader : DbBuddy
         return ExecuteWrite(sql, args);
     }
 
-    
-
-
     /* Removes item by id
      *
      * Params:
@@ -140,7 +132,5 @@ public class ItemLoader : DbBuddy
         // Return number of affected rows
         return ExecuteWrite(sql, args);
     }
-
 }
-
 ```
