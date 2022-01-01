@@ -27,4 +27,4 @@ The steps to use Db Buddy are simple:
 
 ## Tutorials
 
-- [Making the demo](../../tree/main/tutorials/demo.md)
+- [Making the demo](tutorials/demo.md)
