@@ -1,5 +1,6 @@
 using System;
 using SqliteTest;
+using DbBuddy;
 
 public class Demo
 {
