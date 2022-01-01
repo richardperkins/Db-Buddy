@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Mono.Data.Sqlite;
 
-namespace SqliteTest
+namespace DbBuddy
 {
 	public class Database
 	{

@@ -1,21 +1,20 @@
-using System;
-using SqliteTest;
-
-public class Item
+namespace DbBuddy
 {
-	public string name;
-	public string description;
-	public int price;
-	public int stackMax;
-
-	public Item(string _name, string _description, int _price, int _stackMax)
+	public class Item
 	{
-		name = _name;
-		description = _description;
-		price = _price;
-		stackMax = _stackMax;
+		public string name;
+		public string description;
+		public long price;
+		public long stackMax;
+
+		public Item(string _name, string _description, long _price, long _stackMax)
+		{
+			name = _name;
+			description = _description;
+			price = _price;
+			stackMax = _stackMax;
+
+		}
 
 	}
-
 }
-

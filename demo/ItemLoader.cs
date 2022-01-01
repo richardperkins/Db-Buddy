@@ -1,26 +1,33 @@
+using System;
+using System.Data;
+using System.Collections.Generic;
 using SqliteTest;
 
-public class ItemLoader : Database
+using namespace DbBuddy
 {
-	public ItemLoader (string path) : base (path)
+	public class ItemLoader : Database
 	{
+		public ItemLoader (string path) : base (path)
+		{
+
+		}
+
+		public Item GetItemById(int id)
+		{
+			Dictionary<string, object> keys = new Dictionary<string, object>();
+			keys["id"] = id;
+			string sql = "select name, description, price, stack_max from items where id=?";
+
+			DataTable data = Execute(sql, keys);
+
+
+			return new Item(
+				data.Rows[0]["name"].ToString(),
+				data.Rows[0]["description"].ToString(),
+				(long)data.Rows[0]["price"],
+				(long)data.Rows[0]["stack_max"]
+			);
+		}
 
 	}
-
-	public GetItemById(int id)
-	{
-		Dictionary<string, object> keys = new Dictionary<string, object>();
-		keys["id"] = id;
-		string sql = "select name from items where id=?";
-
-		DataTable data = Execute(sql, keys);
-
-		return new Item(
-			data[0]["name"],
-			data[0]["description"],
-			data[0]["price"],
-			data[0]["stack_max"]
-		);
-	}
-
 }
