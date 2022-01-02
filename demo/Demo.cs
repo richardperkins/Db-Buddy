@@ -1,5 +1,5 @@
 using System;
-using SqliteTest;
+using System.Collections.Generic;
 using DbBuddy;
 
 public class Demo
@@ -12,9 +12,22 @@ public class Demo
 	public static void Main()
 	{
 		ItemLoader itemLoader = new ItemLoader("data.db");
-		Item myItem = itemLoader.GetItemById(1);
+		List<Item> myItem = itemLoader.GetAllItems();
 
-		Console.WriteLine("Loaded {0}.", myItem.name);
+		/*
+		Console.WriteLine("Items:");
+		foreach (Item item in myItem)
+		{
+			Console.WriteLine("{0}: {1}", item.name, item.description);
+		}
+		*/
+		List<ItemData> items= itemLoader.Test();
+
+		foreach (ItemData item in items)
+		{
+			Console.WriteLine("{0}: {1}", item.name, item.description);
+		}
+		
 	}
 
 }

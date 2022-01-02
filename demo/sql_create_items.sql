@@ -1,8 +1,8 @@
 CREATE TABLE items
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    description TEXT
+    name VARCHAR(64) NOT NULL,
+    description VARCHAR(255)
 );
 
 INSERT INTO items

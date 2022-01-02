@@ -17,7 +17,7 @@ namespace DbBuddy
 
 		/// <summary> Constructor </summary>
 		/// <param name="path">filepath to SQLite3 database</param>
-		public Database(string path)
+		public DbBuddy(string path)
 		{
 			connectionPath = path;
 		}
@@ -85,7 +85,6 @@ namespace DbBuddy
 					con.Close();
 					return dt;
 				}
-				con.Close();
 			}
 		}
 	}
