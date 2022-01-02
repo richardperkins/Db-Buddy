@@ -96,7 +96,7 @@ We now have a populated database to interface with.
 
 DbBuddy supplies two private methods that make interfacing a breeze.
 
-**[Execute](DbBuddy.md#Execute)** runs SQL statements and returns a *DataTable* of any results we recieved.
+**[Execute](DbBuddy.md#systemdatadatatable-execute-string-sql-dictionarystring-object-args)** runs SQL statements and returns a *DataTable* of any results we recieved.
 
 **[ExecuteWrite](DbBuddy.md#ExecuteWrite)** runs a SQL statement and returns the number of affected rows as an *int*
 
