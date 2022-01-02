@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace DbBuddy
 {
 
 	/// <summary> DbBuddy SQLite3 helper class</summary>
-	public class DbBuddy
+	public class DbBuddy<T>
 	{
 		private const string connectionString = "Data Source=";
 		private string connectionPath;
@@ -87,5 +88,26 @@ namespace DbBuddy
 				}
 			}
 		}
+		/*
+		public List<T> GetDataAsClass(DataTable dt)
+		{
+			List<T> items = new List<T>();
+
+			foreach (DataRow row in dt.Rows)
+			{
+				T newItem = new T();
+
+				Type itemType = typeof(T);
+				FieldInfo[] itemFields = itemType.GetFields();
+				
+				foreach (FieldInfo field in itemFields)
+				{
+					field.SetValue(newItem, row[field.Name]);
+				}
+				items.Add(newItem);
+			}
+
+			return items;
+		}*/
 	}
 }

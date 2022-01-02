@@ -5,9 +5,10 @@ using System.Collections.Generic;
 
 namespace DbBuddy
 {
-	public class ItemLoader : DbBuddy
+	public class ItemLoader : DbBuddy<ItemData>
 	{
 		string sql;
+		
 		Dictionary<string, object> args;
 
 		public ItemLoader (string path) : base (path)

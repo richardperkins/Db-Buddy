@@ -1,5 +1,9 @@
 # Db-Buddy
+
 C# helper class for interfacing SQLite databases
+
+| :exclaimation: This repo is presently unstable and *highly* experimental. **DO NOT** use for production. |
+|----------------------------------------------------------------------------------------------------------|
 
 ## What is Db Buddy?
 **Db Buddy** lends a helping hand in handling SQLite databases in C#.
