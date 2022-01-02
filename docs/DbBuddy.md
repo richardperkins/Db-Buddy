@@ -25,6 +25,31 @@ Executes SQL query, returning any result as a *System.Data.DataTable*.
 
 ## Example
 
+In this example, we will create a database as well as a 
+
+sql_data.sql
+```sql
+CREATE TABLE items
+(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    description TEXT
+);
+
+INSERT INTO items
+(name, description)
+VALUES
+("Suspicious Mushroom", "I wouldn't eat it if I were you"),
+("Cubic Zirconium Ring", "Sounds expensive. Is not"),
+("Saltpeter", "Saltiest of the Dynamite Three"),
+("Sulfur", "Smelliest of the Dynamite Three"),
+("Charcoal", "Dirtiest of the Dynamite Three"),
+("Gunpowder", "Make things go BOOM."),
+("Stave", "Probably belongs to a king or a wizard.");
+
+```
+
+ItemLoader.cs
 ```cs
 using System.Data;
 using DbBuddy;
@@ -131,6 +156,35 @@ public class ItemLoader : DbBuddy
         //Execute write statement
         // Return number of affected rows
         return ExecuteWrite(sql, args);
+    }
+}
+```
+
+Demo.cs
+```cs
+using System;
+using System.Data;
+using DbBuddy;
+
+// Demo class to test our ItemLoader
+public class Demo
+{
+    // Constructor
+    public Demo()
+    {
+        // Filepath to data.db
+        string connectionPath = "data.db";
+
+        // Create an ItemLoader
+        ItemLoader itemLoader = new ItemLoader(connectionPath);
+
+        // Get the second item from "items" table
+        DataTable secondItem = itemLoader.GetItemById(2);
+
+        // Store the name from our results
+        string secondItemName = secondItem.Rows[0]["name"];
+
+        Console.WriteLine("Second item is: %s", secondItemName);
     }
 }
 ```
