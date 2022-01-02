@@ -2,7 +2,7 @@
 C# helper class for interfacing SQLite databases
 
 ## What is Db Buddy?
-*Db Buddy* lends a helping hand in handling SQLite databases in C#.
+**Db Buddy** lends a helping hand in handling SQLite databases in C#.
 
 ## Prerequisites
 
