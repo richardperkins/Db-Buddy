@@ -8,16 +8,24 @@ using Mono.Data.Sqlite;
 
 namespace DbBuddy
 {
-	public class Database
+
+	/// <summary> DbBuddy SQLite3 helper class</summary>
+	public class DbBuddy
 	{
 		private const string connectionString = "Data Source=";
 		private string connectionPath;
 
+		/// <summary> Constructor </summary>
+		/// <param name="path">filepath to SQLite3 database</param>
 		public Database(string path)
 		{
 			connectionPath = path;
 		}
 
+		/// <summary> Executes SQL write to database.</summary>
+		/// <param name="query">SQL statement</param>
+		/// <param name="args">Arguments to bind</param>
+		/// <returns>Number of affected rows</returns>
 		private int ExecuteWrite(string query, Dictionary<string, object> args)
 		{
 			int numberOfRowsAffected;
@@ -45,6 +53,10 @@ namespace DbBuddy
 			}
 		}
 
+		/// <summary> Executes SQL query. </summary>
+		/// <param name="query">SQL query</param>
+		/// <param name="args">Key-value list of arguments to bind.</param>
+		/// <returns>Results from query</returns>
 		public DataTable Execute(string query, Dictionary<string, object> args=null)
 		{
 			if (string.IsNullOrEmpty(query.Trim()))
