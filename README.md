@@ -5,7 +5,6 @@ C# helper class for interfacing SQLite databases
 | :exclamation: Warning                                                                     |
 |-------------------------------------------------------------------------------------------|
 | This repo is presently unstable and *highly* experimental. **DO NOT** use for production. |
-|-------------------------------------------------------------------------------------------|
 
 ## What is SqliteBuddy?
 **SqliteBuddy** lends a helping hand in handling SQLite databases in C#.
