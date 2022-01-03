@@ -12,7 +12,7 @@ namespace DbBuddy
         string _dbPath = "data.db";
         string _tableName;
         Type _dataType;
-        List<T> _items;
+        //List<T> _items;
         string _sql;
         Dictionary<string, object> _args;
         DataTable _result;
@@ -45,14 +45,14 @@ namespace DbBuddy
             return DataToClass<T>()[0];
         }
 
-        List<T> DataToClass<T>() where T:DataBuddy, new()
+        List<R> DataToClass<R>() where R:DataBuddy, new()
         {
             DataTable dt = _result;
-            List<T> items = new List<T>();
+            List<R> items = new List<R>();
 
 			foreach (DataRow row in dt.Rows)
 			{
-				T newItem = new T();
+				R newItem = new R();
 
 				FieldInfo[] itemFields = _dataType.GetFields();
 				
