@@ -2,7 +2,7 @@
 
 C# helper class for interfacing SQLite databases
 
-| :exclaimation: This repo is presently unstable and *highly* experimental. **DO NOT** use for production. |
+| :exclamation: This repo is presently unstable and *highly* experimental. **DO NOT** use for production. |
 |----------------------------------------------------------------------------------------------------------|
 
 ## What is Db Buddy?
