@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "demo/1.0.0": {
+        "dependencies": {
+          "Mono.Data.Sqlite": "1.0.61"
+        },
+        "runtime": {
+          "demo.dll": {}
+        }
+      },
+      "Mono.Data.Sqlite/1.0.61": {
+        "runtime": {
+          "lib/net40/Mono.Data.Sqlite.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "1.0.61.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mono.Data.Sqlite/1.0.61": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o5bYhnYDlQ8qiDBDJEnnK/LlQnHzpAb6ixXdrZKcVGv26jBfSm58ujAR1NLBhs0h+R5782VufbaF6gzYq3iiaA==",
+      "path": "mono.data.sqlite/1.0.61",
+      "hashPath": "mono.data.sqlite.1.0.61.nupkg.sha512"
+    }
+  }
+}

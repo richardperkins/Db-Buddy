@@ -29,10 +29,8 @@ namespace DbBuddy
 
         public T GetByID(int id)
         {
-            _sql = "SELECT * FROM ? WHERE id=?";
+            _sql = string.Format("SELECT * FROM {0} WHERE id={1}", _tableName, id);
             _args.Clear();
-            _args["tableName"] = _tableName;
-            _args["id"] = id;
 
             try
             {
@@ -87,10 +85,12 @@ namespace DbBuddy
                 {
                     if (args != null)
 					{
+                        
 						foreach (KeyValuePair<string, object> entry in args)
 						{
 							cmd.Parameters.AddWithValue(entry.Key, entry.Value);
 						}
+                        cmd.Prepare();
 					}
 
 					var da = new SqliteDataAdapter(cmd);
