@@ -27,9 +27,9 @@ namespace DbBuddy
             _args = new Dictionary<string, object>();
         }
 
-        public T GetByID(int id)
+        public T GetByField(int id, string idName="id")
         {
-            _sql = string.Format("SELECT * FROM {0} WHERE id={1}", _tableName, id);
+            _sql = string.Format("SELECT * FROM {0} WHERE {2}={1}", _tableName, id, idName);
             _args.Clear();
 
             try
@@ -44,6 +44,24 @@ namespace DbBuddy
 
             return DataToClass<T>()[0];
         }
+
+        public List<T> GetAll()
+        {
+            _sql = string.Format("SELECT * FROM {0}", _tableName);
+            _args.Clear();
+
+            try
+            {
+                _result = Execute(_sql, _args);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("An exception occurred: {0}", e.Message);
+                return null;
+            }
+            return DataToClass<T>();
+        }
+
 
         List<R> DataToClass<R>() where R:DataBuddy, new()
         {
