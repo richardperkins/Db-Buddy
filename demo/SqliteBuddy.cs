@@ -27,6 +27,11 @@ namespace DbBuddy
             _args = new Dictionary<string, object>();
         }
 
+        public void SetTable(string tableName)
+        {
+            _tableName = tableName;
+        }
+
         public T GetByField(int id, string idName="id")
         {
             _sql = string.Format("SELECT * FROM {0} WHERE {2}={1}", _tableName, id, idName);
@@ -41,8 +46,26 @@ namespace DbBuddy
                 Console.WriteLine("An exception occurred: {0}", e.Message);
                 return default(T);
             }
-
-            return DataToClass<T>()[0];
+            List<T> item;
+            try
+            {
+                item = DataToClass<T>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An Exception occured: {0}", e.Message);
+                return null;
+            }
+            
+            try
+            {
+                return item[0];
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An exception occured: {0}", e.Message);
+                return null;
+            }
         }
 
         public List<T> GetAll()
