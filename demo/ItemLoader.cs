@@ -93,11 +93,4 @@ namespace DbBuddy
 		}
 
 	}
-
-	public class ItemData
-	{
-		public long id;
-		public string name;
-		public string description;
-	}
 }

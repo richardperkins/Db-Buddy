@@ -11,22 +11,12 @@ public class Demo
 
 	public static void Main()
 	{
-		ItemLoader itemLoader = new ItemLoader("data.db");
-		List<Item> myItem = itemLoader.GetAllItems();
-
-		/*
-		Console.WriteLine("Items:");
-		foreach (Item item in myItem)
-		{
-			Console.WriteLine("{0}: {1}", item.name, item.description);
-		}
-		*/
-		List<ItemData> items= itemLoader.Test();
-
-		foreach (ItemData item in items)
-		{
-			Console.WriteLine("{0}: {1}", item.name, item.description);
-		}
+		SqliteBuddy<ItemData> items = new SqliteBuddy<ItemData>("data.db", "items");
+		ItemData item = items.GetByID(1);
+		if (item != null)
+			Console.WriteLine("Item: {0}", item.name);
+		else
+			Console.WriteLine("No items loaded.");
 		
 	}
 
