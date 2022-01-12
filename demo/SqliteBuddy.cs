@@ -43,7 +43,7 @@ namespace DbBuddy
             }
             catch(Exception e)
             {
-                Console.WriteLine("An exception occurred: {0}", e.Message);
+                //Console.WriteLine("An exception occurred: {0}", e.Message);
                 return default(T);
             }
             List<T> item;
@@ -53,7 +53,7 @@ namespace DbBuddy
             }
             catch (Exception e)
             {
-                Console.WriteLine("An Exception occured: {0}", e.Message);
+                //Console.WriteLine("An Exception occured: {0}", e.Message);
                 return null;
             }
             
@@ -63,7 +63,7 @@ namespace DbBuddy
             }
             catch (Exception e)
             {
-                Console.WriteLine("An exception occured: {0}", e.Message);
+                //Console.WriteLine("An exception occured: {0}", e.Message);
                 return null;
             }
         }
